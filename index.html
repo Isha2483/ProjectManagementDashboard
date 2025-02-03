@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+        }
+        #sidebar-wrapper {
+            min-height: 100vh;
+            background-color: #8174A0;
+        }
+        .sidebar-heading {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .list-group-item {
+            border: none;
+            color: #ffffff;
+            background-color: #8174A0;
+        }
+        .list-group-item:hover {
+            background-color: #A888B5;
+        }
+        .card {
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .progress {
+            height: 20px;
+        }
+        .chart-container {
+            position: relative;
+            height: 40vh;
+            width: 80vw;
+        }
+        .bg-primary-custom {
+            background-color: #007bff !important;
+        }
+        .bg-success-custom {
+            background-color: #28a745 !important;
+        }
+        .bg-warning-custom {
+            background-color: #ffc107 !important;
+        }
+        .bg-danger-custom {
+            background-color: #dc3545 !important;
+        }
+        .bg-info-custom {
+            background-color: #17a2b8 !important;
+        }
+        .bg-secondary-custom {
+            background-color: #6c757d !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class= "border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">Project Management Dashboard</div>
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action ">Dashboard</a>
+                <a href="#" class="list-group-item list-group-item-action ">Projects</a>
+                <a href="#" class="list-group-item list-group-item-action ">Tasks</a>
+                <a href="#" class="list-group-item list-group-item-action ">Reports</a>
+                <a href="#" class="list-group-item list-group-item-action ">Settings</a>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom" style="background-color:#8174A0;">
+                <button class="btn btn-light" id="menu-toggle">Toggle Menu</button>
+                <h4 class="ml-auto text-white">Welcome, User</h4>
+            </nav>
+
+            <div class="container-fluid">
+                <h2 class="mt-4">Dashboard</h2>
+
+                <!-- Project Overview -->
+                <h4 class="mt-4">Project Overview</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 text-black" style="background-color:#EFB6C8">
+                            <div class="card-header">Project A</div>
+                            <div class="card-body">
+                                <p><strong>Start Date:</strong> 2023-01-01</p>
+                                <p><strong>End Date:</strong> 2023-12-31</p>
+                                <p><strong>Status:</strong> <span class="badge badge-success">On Track</span></p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 text-black" style="background-color:#EFB6C8;">
+                            <div class="card-header">Project B</div>
+                            <div class="card-body">
+                                <p><strong>Start Date:</strong> 2023-02-01</p>
+                                <p><strong>End Date:</strong>  2023-11-30</p>
+                                <p><strong>Status:</strong> <span class="badge badge-warning">At Risk</span></p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 text-black" style="background-color:#EFB6C8;">
+                            <div class="card-header">Project C</div>
+                            <div class="card-body">
+                                <p><strong>Start Date:</strong> 2023-03-01</p>
+                                <p><strong>End Date:</strong> 2023-10-31</p>
+                                <p><strong>Status:</strong> <span class="badge badge-danger">Delayed</span></p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task Tracking -->
+                <h4 class="mt-4">Task Tracking</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4 text-white" style="background-color:#5c468e;">
+                            <div class="card-header">Tasks for Project A</div>
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Task 1: Design Phase <span class="badge badge-success float-right">Completed</span></li>
+                                    <li class="list-group-item">Task 2: Development <span class="badge badge-warning float-right">In Progress</span></li>
+                                    <li class="list-group-item">Task 3: Testing <span class="badge badge-secondary float-right">Pending</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 text-white" style="background-color:#5c468e;">
+                            <div class="card-header">Tasks for Project B</div>
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Task 1: Research <span class="badge badge-success float-right">Completed</span></li>
+                                    <li class="list-group-item">Task 2: Implementation <span class="badge badge-warning float-right">In Progress</span></li>
+                                    <li class="list-group-item">Task 3: Review <span class="badge badge-secondary float-right">Pending</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Visualization -->
+                <h4 class="mt-4">Progress Visualization</h4>
+                <div class="chart-container">
+                    <canvas id="projectProgressChart"></canvas>
+                </div>
+
+                <!-- Budget Monitoring -->
+                <h4 class="mt-4">Budget Monitoring</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4 text-black" style="background-color: #FFD2A0;">
+                            <div class="card-header">Total Sales</div>
+                            <div class="card-body">
+                                <h5 class="card-title">$150,000</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 text-black" style="background-color: #FFD2A0;">
+                            <div class="card-header">Project Budget</div>
+                            <div class="card-body">
+                                <h5 class="card-title">$200,000</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Toggle the sidebar
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+
+        // Chart.js for project progress visualization
+        var ctx = document.getElementById('projectProgressChart').getContext('2d');
+        var projectProgressChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Project A', 'Project B', 'Project C'],
+                datasets: [{
+                    label: 'Completion Percentage',
+                    data: [70, 50, 30],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(255, 99, 132, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ffffff'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
